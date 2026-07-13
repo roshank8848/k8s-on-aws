@@ -55,14 +55,14 @@ resource "aws_security_group" "roshan-sg" {
   }
 
 }
-resource "null_resource" "run_ansible" {
-  depends_on = [
-    aws_instance.roshan-instance
-  ]
-  provisioner "local-exec" {
-    command     = "ansible-playbook setup.yaml"
-    working_dir = "../ansible"
-  }
-}
+#resource "null_resource" "run_ansible" {
+#  depends_on = [
+#    aws_instance.roshan-instance
+#  ]
+#  provisioner "local-exec" {
+#    command     = "ansible-playbook setup.yaml"
+#    working_dir = "../ansible"
+#  }
+#}
 
 

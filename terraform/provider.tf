@@ -28,8 +28,8 @@ provider "aws" {
 }
 
 
-provider "cloudflare" {
-  api_token = ""
-}
+#provider "cloudflare" {
+#  api_token = ""
+#}
 
 

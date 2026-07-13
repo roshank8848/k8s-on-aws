@@ -10,6 +10,6 @@ resource "aws_key_pair" "roshan-key" {
 
 resource "local_file" "roshan-key-file" {
   content         = tls_private_key.rsa-4096-roshan.private_key_pem
-  filename        = "${path.module}/../ansible/roshan.pem"
+  filename        = "${path.module}/../ansible/roshank.pem"
   file_permission = "0400"
 }
