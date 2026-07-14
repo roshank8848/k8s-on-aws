@@ -2,6 +2,10 @@
   hosts: vm
   become: yes
   tasks:
+    - name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
     - name: install nginx webserver
       apt:
         name: nginx
@@ -13,11 +17,11 @@
         enabled: yes
     - name: copy config file to webserver
       ansible.builtin.copy:
-        src: ./deepak.conf
+        src: ./roshank.conf
         dest: /etc/nginx/conf.d/
     - name: copy config file to webserver
       ansible.builtin.copy:
-        src: ./deepak-api.conf
+        src: ./roshank-api.conf
         dest: /etc/nginx/conf.d/
     - name: ensure nginx is reloaded
       service: 
@@ -27,7 +31,7 @@
       ansible.builtin.copy:
         src: ./docker-compose.yaml
         dest: /home/ubuntu/
-    - name: run docker-compose using shell
-      ansible.builtin.shell: docker compose up -d
-      args:
-        chdir: /home/ubuntu/
+    # - name: run docker-compose using shell
+    #   ansible.builtin.shell: docker compose up -d
+    #   args:
+    #     chdir: /home/ubuntu/

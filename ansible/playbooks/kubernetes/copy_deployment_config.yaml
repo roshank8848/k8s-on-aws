@@ -1,0 +1,16 @@
+---
+- name: Copy deployment yaml to server
+  hosts: vm
+  tasks:
+  - name: copy frontend deployment scripts
+    ansible.builtin.copy:
+        src: ./k8s/frontend
+        dest: /home/ubuntu/
+  - name: copy backend deployment scripts
+    ansible.builtin.copy:
+        src: ./k8s/backend
+        dest: /home/ubuntu/
+  - name: copy postgres statefulset deployment scripts
+    ansible.builtin.copy:
+        src: ./k8s/postgres
+        dest: /home/ubuntu/

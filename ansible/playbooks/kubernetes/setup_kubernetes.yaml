@@ -5,7 +5,7 @@
   tasks:
   - name: copy kind config to server
     ansible.builtin.copy:
-        src: ./kind-config.yaml
+        src: ./configs/kind-config.yaml
         dest: /home/ubuntu/
 
 
@@ -25,7 +25,7 @@
 
   - name: copy kind config to server
     ansible.builtin.copy:
-        src: ./nginx-ingress.yaml
+        src: ./configs/nginx-ingress.yaml
         dest: /home/ubuntu/
 
   - name: install nginx ingress cluster on kubernetes

@@ -17,7 +17,7 @@ spec:
       # The Init Container runs to completion BEFORE the main container starts
       initContainers:
       - name: db-migration
-        image: roshnk8848/threetier-backend:0.0.1
+        image: roshank8848/threetier-backend:0.0.1
         command: ["sh", "-c", "alembic upgrade head"]
         env:
         - name: DATABASE_URL
@@ -25,7 +25,7 @@ spec:
       
       containers:
       - name: backend
-        image: roshnk8848/threetier-backend:0.0.1
+        image: roshank8848/threetier-backend:0.0.1
         ports:
         - containerPort: 8000
         env:

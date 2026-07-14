@@ -66,12 +66,6 @@
         url: "https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64"
         dest: /usr/local/bin/kind
         mode: '0755'
-
-    - name: Download and install kompose
-      ansible.builtin.get_url:
-        url: "https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-amd64"
-        dest: /usr/local/bin/kompose
-        mode: '0755'  
     
     - name: Download and install kubectl
       ansible.builtin.get_url:
