@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: roshank8848/threetier-frontend:0.0.1
+        image: roshank8848/threetier-frontend:0.0.4
         ports:
         - containerPort: 80
 
